@@ -20,7 +20,7 @@
 
 **Interfaz Principal** | **Cuenta Regresiva y Ganador**
 :---: | :---:
-![Imagen 1 - Interfaz Principal](imagen1.png) | ![Imagen 2 - Cuenta Regresiva y Ganador](imagen2.png)
+![Imagen 1 - Interfaz Principal](demos/1.jpg) | ![Imagen 2 - Cuenta Regresiva y Ganador](demos/2.jpg)
 
 ---
 
