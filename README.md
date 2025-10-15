@@ -16,6 +16,14 @@
 
 ---
 
+## 📷 Vista Previa
+
+**Interfaz Principal** | **Cuenta Regresiva y Ganador**
+:---: | :---:
+![Imagen 1 - Interfaz Principal](imagen1.png) | ![Imagen 2 - Cuenta Regresiva y Ganador](imagen2.png)
+
+---
+
 ## 🚀 Cómo Usar
 
 ### Opción 1: Localmente
@@ -26,7 +34,7 @@
     @otro_participante
     @suerte_a_todos
     ```
-3.  **Inicia el Sorteo**: Haz clic en el botón **"Iniciar Sorteo"**.
+3. **Inicia el Sorteo**: Haz clic en el botón **"Iniciar Sorteo"**.
 4.  **¡Disfruta el Espectáculo!**: La aplicación mostrará una cuenta regresiva cinematográfica y, finalmente, revelará al afortunado ganador con una lluvia de confeti.
 
 ### Opción 2: Con Docker (Despliegue en Servidor)
