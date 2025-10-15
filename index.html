@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sorteo Instagram - Selecciona Ganador</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="src/css/styles.css">
+</head>
+<body>
+  <div class="overlay" id="overlay">
+    <!-- Cuenta regresiva -->
+    <div class="countdown-container" id="countdown-container">
+      <div class="countdown-number" id="countdown-number">3</div>
+    </div>
+    
+    <!-- Suspenso (ahora solo para fallback si es necesario) -->
+    <div class="suspense-container" id="suspense-container">
+      <div class="suspense-spinner"></div>
+      <div class="suspense-text">Seleccionando ganador...</div>
+    </div>
+    
+    <!-- Ganador -->
+    <div class="ganador-container" id="ganador-container">
+      <div class="ganador-title">¡FELICIDADES!</div>
+      <div class="ganador-text" id="ganador-text">@usuario</div>
+    </div>
+  </div>
+  
+  <div class="container">
+    <div class="logo">
+      <i class="fab fa-instagram"></i>
+    </div>
+    
+    <h1>Sorteo de Instagram</h1>
+    <p class="subtitle">Pega la lista de participantes y elige un ganador</p>
+    
+    <div class="form-group">
+      <label for="participantes-input">Participantes (uno por línea)</label>
+      <textarea 
+        id="participantes-input" 
+        placeholder="Ej:
+@usuario1
+@usuario2
+@usuario3"
+      ></textarea>
+    </div>
+    
+    <button id="btn-iniciar" class="btn-iniciar">
+      <i class="fas fa-star"></i> Iniciar Sorteo
+    </button>
+  </div>
+
+  <script src="src/js/main.js"></script>
+</body>
+</html>
