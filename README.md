@@ -52,4 +52,4 @@ El proyecto está organizado de forma modular para facilitar su mantenimiento y 
 
 ---
 
-Desarrollado con ❤️ por **Kilo Code**.
+Desarrollado por Rodrigo Angeloni.
