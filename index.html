@@ -28,18 +28,14 @@
                     </div>
                     <div class="form-group">
                         <label for="participants">Participantes (uno por línea)</label>
-                        <textarea id="participants" placeholder="@usuario1&#10;@usuario2&#10;@usuario3" required></textarea>
+                        <textarea id="participants" placeholder="@usuario1\n@usuario2\n@usuario3" required></textarea>
                     </div>
                     <div class="form-group">
                         <label for="winner-count">Número de Ganadores</label>
                         <input type="number" id="winner-count" value="1" min="1" required>
                     <div class="form-group">
-                        <input type="checkbox" id="allow-duplicates">
-                        <label for="allow-duplicates">Permitir participantes duplicados</label>
-                    <div class="form-group">
                         <label for="excluded-participants">Excluir Participantes (uno por línea)</label>
-                        <textarea id="excluded-participants" placeholder="@autor&#10;@sorteo_anterior"></textarea>
-                    </div>
+                        <textarea id="excluded-participants" placeholder="@autor\n@sorteo_anterior"></textarea>
                     </div>
                     </div>
                     <button type="submit" class="btn-start">

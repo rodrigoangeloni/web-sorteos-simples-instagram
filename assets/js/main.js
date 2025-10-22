@@ -12,7 +12,6 @@ const winnerDisplay = document.getElementById('winner-display');
 const restartButton = document.getElementById('btn-restart');
 const exportButton = document.getElementById('btn-export');
 const animationOverlay = document.getElementById('animation-overlay');
-const allowDuplicatesCheckbox = document.getElementById('allow-duplicates');
 const excludedParticipantsInput = document.getElementById('excluded-participants');
 
 /**
@@ -77,15 +76,12 @@ class Giveaway {
             .map(p => p.trim())
             .filter(p => p.length > 0);
 
-        const allowDuplicates = allowDuplicatesCheckbox.checked;
         const excludedParticipants = excludedParticipantsInput.value
             .split('\n')
             .map(p => p.trim())
             .filter(p => p.length > 0);
 
-        if (!allowDuplicates) {
-            rawParticipants = [...new Set(rawParticipants)];
-        }
+        rawParticipants = [...new Set(rawParticipants)];
 
         this.participants = rawParticipants.filter(p => !excludedParticipants.includes(p));
     }

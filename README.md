@@ -18,7 +18,6 @@
 2.  **Configura tu Sorteo**:
     -   **Nombre del Sorteo**: Dale un título a tu sorteo (ej. "Sorteo de Verano").
     -   **Participantes**: Pega la lista de nombres de usuario, uno por línea. Puedes usar el script de consola para obtenerlos fácilmente (ver sección "Extractor de Participantes").
-    -   **Permitir participantes duplicados**: Marca esta opción si un usuario que comenta varias veces debe contar como múltiples participaciones.
     -   **Excluir Participantes**: Pega una lista de usuarios (uno por línea) que no deseas que participen en el sorteo (ej. el organizador, cuentas de prueba, etc.).
     -   **Número de Ganadores**: Especifica cuántos ganadores quieres seleccionar.
 3.  **Inicia el Sorteo**: Haz clic en el botón `Iniciar Sorteo` y ¡deja que la magia ocurra!
