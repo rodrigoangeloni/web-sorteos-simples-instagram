@@ -232,3 +232,17 @@ body {
         transform: translateY(0);
     }
 }
+
+/* Roulette Animation */
+#roulette-container {
+    font-size: 3rem;
+    font-weight: 900;
+    color: white;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    text-align: center;
+    padding: 2rem;
+    border-radius: 15px;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    display: none; /* Hidden by default */
+}

@@ -1,4 +1,4 @@
-import { triggerConfetti } from './animations.js';
+import { triggerConfetti, startRouletteAnimation } from './animations.js';
 import { exportWinners } from './export.js';
 
 // DOM Elements
@@ -12,6 +12,8 @@ const winnerDisplay = document.getElementById('winner-display');
 const restartButton = document.getElementById('btn-restart');
 const exportButton = document.getElementById('btn-export');
 const animationOverlay = document.getElementById('animation-overlay');
+const allowDuplicatesCheckbox = document.getElementById('allow-duplicates');
+const excludedParticipantsInput = document.getElementById('excluded-participants');
 
 /**
  * Handles the main logic for the giveaway.
@@ -54,20 +56,38 @@ class Giveaway {
             return;
         }
 
-        this.winners = this.selectWinners();
-        this.displayWinners(this.winners);
-        this.showWinnerSection();
-        triggerConfetti();
+        // Iniciar la animación de ruleta
+        animationOverlay.style.display = 'block';
+        startRouletteAnimation(this.participants, () => {
+            animationOverlay.style.display = 'none';
+            this.winners = this.selectWinners();
+            this.displayWinners(this.winners);
+            this.showWinnerSection();
+            triggerConfetti();
+        });
     }
 
     /**
-     * Gathers and cleans the list of participants from the textarea.
+     * Gathers and cleans the list of participants from the textarea,
+     * applying rules for duplicates and exclusions.
      */
     gatherParticipants() {
-        this.participants = participantsInput.value
+        let rawParticipants = participantsInput.value
             .split('\n')
             .map(p => p.trim())
             .filter(p => p.length > 0);
+
+        const allowDuplicates = allowDuplicatesCheckbox.checked;
+        const excludedParticipants = excludedParticipantsInput.value
+            .split('\n')
+            .map(p => p.trim())
+            .filter(p => p.length > 0);
+
+        if (!allowDuplicates) {
+            rawParticipants = [...new Set(rawParticipants)];
+        }
+
+        this.participants = rawParticipants.filter(p => !excludedParticipants.includes(p));
     }
 
     /**
@@ -112,7 +132,13 @@ class Giveaway {
             const winnerElement = document.createElement('div');
             winnerElement.className = 'winner-item';
             winnerElement.textContent = winner;
+            winnerElement.style.opacity = '0';
             winnerDisplay.appendChild(winnerElement);
+
+            setTimeout(() => {
+                winnerElement.style.transition = 'opacity 0.5s ease-in';
+                winnerElement.style.opacity = '1';
+            }, 100);
         });
     }
 

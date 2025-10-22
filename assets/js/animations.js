@@ -23,3 +23,29 @@ export function triggerConfetti() {
         confetti(Object.assign({}, defaults, { particleCount, origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 } }));
     }, 250);
 }
+
+export function startRouletteAnimation(participants, onAnimationEnd) {
+    const rouletteContainer = document.getElementById('roulette-container');
+    rouletteContainer.innerHTML = ''; // Clear previous content
+    rouletteContainer.style.display = 'block';
+
+    let animationInterval;
+    let spinCount = 0;
+    const maxSpins = 30; // Number of times the roulette will "spin"
+    const spinDuration = 50; // Milliseconds per spin
+
+    const displayRandomParticipant = () => {
+        const randomIndex = Math.floor(Math.random() * participants.length);
+        rouletteContainer.textContent = participants[randomIndex];
+    };
+
+    animationInterval = setInterval(() => {
+        displayRandomParticipant();
+        spinCount++;
+        if (spinCount > maxSpins) {
+            clearInterval(animationInterval);
+            rouletteContainer.style.display = 'none';
+            onAnimationEnd();
+        }
+    }, spinDuration);
+}
